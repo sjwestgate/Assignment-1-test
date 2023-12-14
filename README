@@ -1,0 +1,2 @@
+Template for autograding: https://github.com/education/autograding-example-c/tree/master
+If you want to test your code in the same way the demonstrators will grade it, you can just write "make test" in the console. 
