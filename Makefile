@@ -1,5 +1,5 @@
 a.out:
-	g++ assignment-1.cpp
+	g++ assignment-1 assignment-1.cpp 
 
 clean:
 	rm assignment-1
