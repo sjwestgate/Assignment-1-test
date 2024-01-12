@@ -25,4 +25,4 @@ Which you can then execute in a terminal using:
 
 `./assignment-1.o`
 
-You can find out more about Makefiles (here)[https://www.gnu.org/software/make/manual/html_node/Introduction.html] or (in this simple started guide)[https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/] but we won't cover these in the course. 
+You can find out more about Makefiles [here](https://www.gnu.org/software/make/manual/html_node/Introduction.html) or [in this simple starter guide](https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/) but we won't cover these in the course. 
