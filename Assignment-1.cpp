@@ -16,6 +16,7 @@ int main()
   // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
 
   // Output answer
+  std::cout << "Here is my answer:" << "..." << std::endl;
 
   return 0;
 }
