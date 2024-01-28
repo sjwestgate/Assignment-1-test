@@ -1,13 +1,5 @@
 This is the template for the first assignment. 
 
-# Goals of this assignment 
-
-[...] add here instructions for doing the assignment [...]
-
-# What is expected from your code
-
-[...] add here instructions for doing the assignment [...]
-
 # Tips on checking compilation
 
 If you want to compile your code in the same way the demonstrators will compile it to check it, you can just write "make" in the console. 
