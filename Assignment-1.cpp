@@ -8,7 +8,7 @@
 int main()
 {
   // Declare variables here
-
+  //Adding stuff just to test
   // Ask user to enter atomic number
 
   // Ask user to enter initial and final quantum numbers
@@ -16,7 +16,7 @@ int main()
   // Compute photon energy, Delta E = 13.6*(Z^2)*(1/n_j^2-1/n_i^2) eV
 
   // Output answer
-  std::cout << "Here is my answer:" << "..." << std::endl;
+  std::cout << "Answer here" << "..." << std::endl;
 
   return 0;
 }
