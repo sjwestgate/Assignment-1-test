@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is the template for the first assignment. 
 
 # Tips on checking compilation
@@ -18,3 +19,7 @@ Which you can then execute in a terminal using:
 `./assignment-1.o`
 
 You can find out more about Makefiles [here](https://www.gnu.org/software/make/manual/html_node/Introduction.html) or [in this simple starter guide](https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/) but we won't cover these in the course. 
+=======
+# Assignment-1-test
+Testing and assignment 1
+>>>>>>> 8ec082c74e5be68fe77f4ba0203305ac0f223a8a
