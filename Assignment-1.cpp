@@ -13,6 +13,15 @@ int main() {
   }
 
   std::cout << "Your number is: " << Z << std::endl;
+
+  int n_i, n_j;
+  std::cout << "Please enter two positive integer values for n_i and n_j (n_i > n_j): "; // Type two numbers and press enter
+  while(!(std::cin >> n_i >> n_j) || n_i <= 0 || n_j <= 0 || n_i <= n_j) {
+    std::cin.clear(); // Reset input errors
+    std::cin.ignore(10000, '\n'); // Remove bad input
+    std::cout << "Invalid input! Please enter two positive integer values for n_i and n_j (n_i > n_j): ";
+  }
+  std::cout << "Your numbers are: n_i = " << n_i << ", n_j = " << n_j << std::endl;
   return 0;
 }
 
