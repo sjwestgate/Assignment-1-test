@@ -3,6 +3,11 @@
 
 #include <iostream>
 
+void energy_calculation(int Z, int n_i, int n_j) {
+  double energy = 13.6 * Z * Z * (1.0 / (n_j * n_j) - 1.0 / (n_i * n_i));
+  std::cout << "The transition energy is: " << energy << " eV" << std::endl;
+}
+
 int main() {
   int Z;
   std::cout << "Please enter an integer value for Z: "; // Type a number and press enter
@@ -22,6 +27,8 @@ int main() {
     std::cout << "Invalid input! Please enter two positive integer values for n_i and n_j (n_i > n_j): ";
   }
   std::cout << "Your numbers are: n_i = " << n_i << ", n_j = " << n_j << std::endl;
+  std::cout << "Calculating transition energy..." << std::endl;
+  energy_calculation(Z, n_i, n_j);
   return 0;
 }
 
