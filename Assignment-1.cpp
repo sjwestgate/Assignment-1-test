@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <iomanip>
+#include <fstream>
+#include <vector>
 
 void energy_calculation(int Z, int n_i, int n_j) {
   double energy = 13.6 * Z * Z * (1.0 / (n_j * n_j) - 1.0 / (n_i * n_i));
@@ -42,6 +45,19 @@ int valid_input(){
 
 
 int main() {
+  std::cout << std::setprecision(3) << std::fixed; // Set precision for output
+  std::ifstream ElementsFile("elements.txt");
+  std::vector<std::string> Elements;
+  if (ElementsFile.is_open()) {
+    std::string element;
+    while (std::getline(ElementsFile, element)) {
+      Elements.push_back(element);
+    }
+    ElementsFile.close();
+  } else {
+    std::cerr << "Unable to open elements.txt file." << std::endl;
+    return 1; // Exit with error code
+  }
   std::string again;
   again = "y";
   std::cout << "Welcome to the transition energy calculator!" << std::endl;
@@ -49,17 +65,25 @@ int main() {
     int Z;
     std::cout << "Please enter a positive integer value for Z: "; // Type a number and press enter
     Z = valid_input();
-
-    std::cout << "Your number is: " << Z << std::endl;
+    if (Z<118) {
+      std::cout << "Nice choice! Your atomic number " << Z << " corresponds to " 
+                  << Elements[Z] << "." << std::endl;
+    } else {
+        std::cout << "Alas! They have not yet found an element with atomic number " << Z 
+                  << ". We'll do the calculation anyway.\n";
+    }
+    
 
     int n_i, n_j;
     std::cout << "Please enter two positive integer values for n_i and n_j (n_i > n_j): ";
-    n_i = valid_input();
-    n_j = valid_input();
-    while(n_i <= n_j) {
-      std::cout << "Invalid input! Please ensure n_i > n_j. Enter n_i and n_j again: ";
+    while (true) {
       n_i = valid_input();
       n_j = valid_input();
+      if(n_i > n_j) {
+        break;
+      } else {
+        std::cout << "Invalid input! Please ensure n_i > n_j. Enter n_i and n_j again: ";
+      }
     }
     std::cout << "Your numbers are: n_i = " << n_i << ", n_j = " << n_j << std::endl;
 
@@ -79,8 +103,8 @@ int main() {
       energy_calculation(Z, n_i, n_j);
     } else {
       double energy_eV = 13.6 * Z * Z * (1.0 / (n_j * n_j) - 1.0 / (n_i * n_i));
-      double energy_J = energy_eV * 1.60218e-19; // Convert eV to Joules
-      std::cout << "The transition energy is: " << energy_J << " J" << std::endl;
+      double energy_J = energy_eV * 1.60218; // Convert eV to Joules * e19
+      std::cout << "The transition energy is: " << energy_J << "e-19 J" << std::endl;
     }
     std::cout << "Thank you for using the transition energy calculator. Would you like another go? (y/n): ";
     while(true) {
